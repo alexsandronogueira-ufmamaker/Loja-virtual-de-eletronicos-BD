@@ -1,0 +1,127 @@
+CREATE TABLE Pedidos 
+( 
+ id_pedido INT PRIMARY KEY AUTO_INCREMENT,  
+ cod_cliente INT,  
+ data DATETIME NOT NULL,  
+ status VARCHAR(30) NOT NULL
+); 
+
+CREATE TABLE Clientes 
+( 
+ cod_cliente INT PRIMARY KEY AUTO_INCREMENT,  
+ nome VARCHAR(100) NOT NULL,  
+ email VARCHAR(40) NOT NULL,  
+ telefone VARCHAR(20) NOT NULL,  
+ cpf VARCHAR(30) NOT NULL,
+ UNIQUE (cpf)
+); 
+
+CREATE TABLE Produtos 
+( 
+ id_produto INT PRIMARY KEY,  
+ nome VARCHAR(100),  
+ modelo VARCHAR(50) NOT NULL,  
+ preco FLOAT,  
+ id_categoria INT,  
+ id_fornecedor INT,  
+ id_marca INT
+); 
+
+CREATE TABLE Estoque 
+( 
+ id_produto INT PRIMARY KEY,  
+ quantidade INT NOT NULL 
+); 
+
+CREATE TABLE Enderecos 
+( 
+ id_endereco INT PRIMARY KEY,  
+ cod_cliente INT,  
+ estado VARCHAR(30),  
+ cidade VARCHAR(30),  
+ bairro VARCHAR(30),  
+ logradouro VARCHAR(30),  
+ numero VARCHAR(30) 
+); 
+
+CREATE TABLE Itens_pedidos 
+( 
+ id_item INT PRIMARY KEY AUTO_INCREMENT,  
+ id_pedido INT,  
+ id_produto INT,  
+ quantidade INT NOT NULL DEFAULT '1',  
+ preco_unitario FLOAT NOT NULL
+); 
+
+CREATE TABLE Categorias 
+( 
+ id_categoria INT PRIMARY KEY,  
+ nome VARCHAR(100) NOT NULL,  
+ descricao VARCHAR(100) 
+); 
+
+CREATE TABLE Marcas 
+( 
+ nome VARCHAR(100) NOT NULL,  
+ descricao VARCHAR(100),  
+ id_marca INT PRIMARY KEY
+); 
+
+CREATE TABLE Cartoes 
+( 
+ id_forma_pagamento INT PRIMARY KEY,  
+ cod_cliente INT,  
+ nome VARCHAR(100) NOT NULL,  
+ numero_cartao CHAR NOT NULL,  
+ titular VARCHAR(100) NOT NULL,  
+ cvv CHAR(3) NOT NULL,  
+ mes CHAR(2) NOT NULL,  
+ ano CHAR(4) NOT NULL  
+); 
+
+CREATE TABLE Fornecedores 
+( 
+ id_fornecedor INT PRIMARY KEY,  
+ nome VARCHAR(100) NOT NULL,  
+ cnpj VARCHAR(30) NOT NULL,  
+ email VARCHAR(40) NOT NULL,  
+ telefone VARCHAR(30) NOT NULL 
+); 
+
+CREATE TABLE Transportadoras 
+( 
+ id_transportadora INT PRIMARY KEY,  
+ nome VARCHAR(100) NOT NULL,  
+ cnpj VARCHAR(30) NOT NULL,  
+ contato VARCHAR(30) NOT NULL  
+); 
+
+CREATE TABLE Entregas 
+( 
+ id_entrega INT PRIMARY KEY,  
+ id_pedido INT,  
+ id_transportadora INT,  
+ status VARCHAR(30) NOT NULL,  
+ codigo_rastreio VARCHAR(30) NOT NULL,  
+ data_envio DATE NOT NULL,  
+ data_entrega DATE  
+); 
+
+CREATE TABLE Suporte_tecnico 
+( 
+ id_atendimento INT PRIMARY KEY,  
+ id_pedido INT  
+);
+
+ALTER TABLE Pedidos ADD FOREIGN KEY(cod_cliente) REFERENCES Clientes (cod_cliente);
+ALTER TABLE Produtos ADD FOREIGN KEY(id_categoria) REFERENCES Categorias (id_categoria);
+ALTER TABLE Produtos ADD FOREIGN KEY(id_fornecedor) REFERENCES Fornecedores (id_fornecedor);
+ALTER TABLE Produtos ADD FOREIGN KEY(id_marca) REFERENCES Marcas (id_marca);
+ALTER TABLE Estoque ADD FOREIGN KEY(id_produto) REFERENCES Produtos (id_produto);
+ALTER TABLE Enderecos ADD FOREIGN KEY(cod_cliente) REFERENCES Clientes (cod_cliente);
+ALTER TABLE Itens_pedidos ADD FOREIGN KEY(id_pedido) REFERENCES Pedidos (id_pedido);
+ALTER TABLE Itens_pedidos ADD FOREIGN KEY(id_produto) REFERENCES Produtos (id_produto);
+ALTER TABLE Cartoes ADD FOREIGN KEY(cod_cliente) REFERENCES Clientes (cod_cliente);
+ALTER TABLE Entregas ADD FOREIGN KEY(id_pedido) REFERENCES Pedidos (id_pedido);
+ALTER TABLE Entregas ADD FOREIGN KEY(id_transportadora) REFERENCES Transportadoras (id_transportadora);
+ALTER TABLE Suporte_tecnico ADD FOREIGN KEY(id_pedido) REFERENCES Pedidos (id_pedido);
