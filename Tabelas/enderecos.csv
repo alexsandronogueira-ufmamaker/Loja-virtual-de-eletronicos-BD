@@ -1,0 +1,41 @@
+id_endereco,cod_cliente,estado,cidade,bairro,logradouro,numero
+1,1,PE,Recife,Centro,Rua Floriano Peixoto,120
+2,1,PE,Recife,Santo Amaro,Avenida Norte,855
+3,2,SP,Sao Paulo,Jardim das Flores,Rua das Acacias,45
+4,3,MG,Belo Horizonte,Centro,Rua Rio Branco,300
+5,4,RJ,Rio de Janeiro,Copacabana,Avenida Brasil,900
+6,4,RJ,Rio de Janeiro,Copacabana,Rua Souza Lima,112
+7,5,SP,Sao Paulo,Santana,Rua Dom Pedro,77
+8,6,MG,Contagem,Industrial,Rua Amazonas,455
+9,7,RN,Natal,Centro,Avenida Central,1220
+10,8,PE,Recife,Boa Vista,Rua Estrela Guia,88
+11,9,MG,Belo Horizonte,Savassi,Rua Antonio Dias,54
+12,10,PR,Curitiba,Centro,Rua Treze,900
+13,11,SP,Sao Paulo,Jardim Paulista,Rua das Oliveiras,33
+14,12,RS,Porto Alegre,Centro,Rua Sete de Setembro,540
+15,13,MG,Belo Horizonte,Planalto,Rua Horizonte Azul,199
+16,14,CE,Fortaleza,Meireles,Avenida Litoranea,410
+17,15,SP,Sao Paulo,Consolacao,Rua Frei Caneca,77
+18,16,AM,Manaus,Jardim Tropical,Rua Rio Verde,130
+19,17,RN,Natal,Petropolis,Avenida Rui Barbosa,505
+20,18,SE,Aracaju,Mercado,Rua Angelim,92
+21,19,ES,Vitoria,Centro,Rua Flor de Lis,21
+22,20,RS,Porto Alegre,Centro,Avenida Independencia,1880
+23,20,RS,Porto Alegre,Centro,Rua Ernesto Alves,320
+24,21,SC,Florianopolis,Praia Grande,Rua Albatroz,600
+25,22,GO,Goiania,Centro,Rua Canario,40
+26,23,SP,Sao Paulo,Jardim Europa,Rua dos Jasmins,12
+27,24,MG,Belo Horizonte,Funcionarios,Rua Paraiba,88
+28,25,BA,Salvador,Centro,Rua Bahia,190
+29,26,MG,Belo Horizonte,Estoril,Rua Quatro Estacoes,77
+30,27,RJ,Niteroi,Jardim Icarai,Rua das Palmeiras,155
+31,28,AL,Maceio,Centro,Rua do Comercio,299
+32,29,RJ,Rio de Janeiro,Leme,Avenida Atlantica,1800
+33,29,RJ,Rio de Janeiro,Leme,Rua Gustavo Sampaio,45
+34,30,PE,Recife,Pina,Rua Mar Vermelho,71
+35,30,PE,Recife,Boa Viagem,Rua do Sol,300
+36,12,RS,Porto Alegre,Centro,Rua Bento Goncalves,412
+37,8,MG,Contagem,Centro,Rua Santa Monica,101
+38,3,MG,Belo Horizonte,Santa Efigenia,Rua Acre,800
+39,14,CE,Fortaleza,Aldeota,Rua Iguatemi,220
+40,7,RN,Natal,Tirol,Rua Natalina,300
